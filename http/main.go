@@ -12,10 +12,10 @@ func main() {
 	fb := fbhttp.FictionBase{}
 	fb.InitKey()
 	// check http
+	// @TODO i wan'ts write test... but this code...
 	resp, elapsed, err := fbhttp.GetResponseAndTime()
 	defer resp.Body.Close()
 	if err != nil {
-		// @TODO Really???
 		fb.Message.Status = 500
 		err = fictionbase.SendFictionbaseMessage(fb)
 		if err != nil {

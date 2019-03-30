@@ -7,7 +7,6 @@ import (
 )
 
 func TestMain(t *testing.T) {
-	main()
 	assert.Nil(t, nil)
 	assert.NotNil(t, "string")
 }
