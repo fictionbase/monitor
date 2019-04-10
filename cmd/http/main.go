@@ -5,6 +5,8 @@ import (
 
 	"github.com/fictionbase/fictionbase"
 	"github.com/fictionbase/fictionbase/type/fbhttp"
+	"github.com/fictionbase/monitor/httpCheck"
+	"github.com/spf13/viper"
 )
 
 func main() {
@@ -12,8 +14,8 @@ func main() {
 	fb := fbhttp.FictionBase{}
 	fb.InitKey()
 	// check http
-	// @TODO i wan'ts write test... but this code...
-	resp, elapsed, err := fbhttp.GetResponseAndTime()
+
+	resp, elapsed, err := httpCheck.GetResponseAndTime(viper.GetString("externalMonitoring.http"))
 	defer resp.Body.Close()
 	if err != nil {
 		fb.Message.Status = 500
