@@ -15,7 +15,7 @@ func main() {
 	fb.InitKey()
 	// check http
 
-	resp, elapsed, err := httpCheck.GetResponseAndTime(viper.GetString("externalMonitoring.http"))
+	resp, elapsed, err := httpcheck.GetResponseAndTime(viper.GetString("externalMonitoring.http"))
 	defer resp.Body.Close()
 	if err != nil {
 		fb.Message.Status = 500
