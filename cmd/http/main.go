@@ -5,7 +5,7 @@ import (
 
 	"github.com/fictionbase/fictionbase"
 	"github.com/fictionbase/fictionbase/type/fbhttp"
-	"github.com/fictionbase/monitor/httpCheck"
+	"github.com/fictionbase/monitor/httpcheck"
 	"github.com/spf13/viper"
 )
 
